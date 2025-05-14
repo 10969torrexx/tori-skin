@@ -21,11 +21,14 @@
     @font-face {
       font-family: 'Playfair Display';
       src: url('/assets/fonts/playfair-display.ttf') format('truetype');
-      font-weight: 700;
+      font-weight: 300;
+      font-style: normal;
     }
 
     body {
-      font-family:  sans-serif;
+      font-family: 'Century Gothic' ,sans-serif;
+      background-color: #f5f5f5;
+      color: black;
     }
 
     .font-playfair {
@@ -35,6 +38,23 @@
     .font-giga-sans {
       font-family: 'Giga Sans', sans-serif;
     }
+
+    .font-gothic {
+        font-family: 'Century Gothic';
+        font-weight: lighter;
+    }
+
+    .header-1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: lighter;
+    }
+
+    .content {
+        padding: 2rem;
+        background-color: #f5f5f5;
+    }
+
   </style>
 <body class="bg-gray-100 text-center">
     <main 
@@ -47,19 +67,40 @@
             <div class="flex justify-between h-16 items-center">
                 <nav class="space-x-6">
                     <a href="#" class="text-gray-700 font-medium border-b-2 border-gray-600 pb-1">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-400 font-medium">About</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-400 font-medium">Services</a>
+                    <a href="#" class="text-gray-700 hover:text-gray-400 font-medium">Contact</a>
                 </nav>
             </div>
             </div>
         </header>
 
-        <div class="text-left text-black font-playfair">
-            <h1 class="text-4xl text-left">Welcome to Tori Skin</h1>
-            <p class="mt-4 text-lg">Your trusted skincare partner</p>
+        <div class="flex items-center justify-start min-h-screen">
+            <div class="text-left text-black p-8 rounded-lg max-w-xl mr-10">
+                <h1 class="text-5xl font-playfair">Welcome to Tori Skin</h1>
+                <h2 class="mt-4 text-lg font-light">
+                Formulated for Perfection.<br />
+                Your skin’s partner for a better you.
+                </h2>
+            </div>
         </div>
     </main>
+
+    <div class="content" id="products">
+        <h1 class="text-center text-black header-1 text-6xl mb-6">- PRODUCTS -</h1>
+      
+        <nav class="flex justify-center space-x-20 text-gray-700 font-giga-sans text-xl">
+            <a href="#skincare" class="hover:text-sky-700 border-b-2 border-transparent hover:border-sky-300 pb-4">
+                Brightening
+            </a>
+            <a href="#makeup" class="hover:text-sky-700 border-b-2 border-sky-400 hover:border-sky-300 pb-4">
+                Anti-acne
+            </a>
+            <a href="#fragrance" class="hover:text-sky-700 border-b-2 border-transparent hover:border-sky-300 pb-4">
+                Anti-aging
+            </a>
+        </nav>
+    </div>
 
     <footer class="bg-black text-white">
         <div class="max-w-7xl mx-auto px-4 py-10 flex flex-wrap justify-between gap-8">
