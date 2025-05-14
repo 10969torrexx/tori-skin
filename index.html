@@ -25,10 +25,21 @@
       font-style: normal;
     }
 
+    *,
+    *::before,
+    *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
     body {
       font-family: 'Century Gothic' ,sans-serif;
       background-color: #f5f5f5;
       color: black;
+      margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .font-playfair {
@@ -206,7 +217,8 @@
                 </div>
             </div>
         </div>
-
+    </div>
+    
     <footer class="bg-black text-white">
         <div class="max-w-7xl mx-auto px-4 py-10 flex flex-wrap justify-between gap-8">
             
