@@ -60,6 +60,9 @@
 
   </style>
 <body class="">
+    <div id="backdrop"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden">
+    </div>
     <main 
         class="min-h-screen bg-cover bg-no-repeat bg-no-repeat p-10 text-center text-white" 
         style="background-image: url('/assets//img/model-main.jpg');"
@@ -82,15 +85,26 @@
                     <a href="#" class="text-gray-700 hover:text-gray-400 font-medium border-b-2 border-transparent hover:border-gray-400 pb-1">Contact</a>
                     </nav>
                 </div>
-          
-                <nav id="mobile-menu" class="md:hidden flex-col space-y-2 mt-4 hidden">
-                    <a href="#" class="block text-gray-700 font-medium border-l-4 border-gray-600 pl-4">Home</a>
-                    <a href="#" class="block text-gray-700 hover:text-gray-400 font-medium border-l-4 border-transparent hover:border-gray-400 pl-4">About</a>
-                    <a href="#" class="block text-gray-700 hover:text-gray-400 font-medium border-l-4 border-transparent hover:border-gray-400 pl-4">Services</a>
-                    <a href="#" class="block text-gray-700 hover:text-gray-400 font-medium border-l-4 border-transparent hover:border-gray-400 pl-4">Contact</a>
-                </nav>
+
             </div>
         </header>
+
+        <header class="relative z-50">
+            <nav id="mobile-menu"
+                 class="md:hidden fixed top-0 left-0 h-full w-[90vw] bg-white z-50 flex flex-col space-y-4 p-6 hidden shadow-lg">
+          
+              <div class="flex justify-end">
+                <button id="close-menu" class="text-gray-700 hover:text-gray-900 text-2xl focus:outline-none">
+                  &times;
+                </button>
+              </div>
+          
+              <a href="#" class="text-gray-700 font-medium border-l-4 border-gray-600 pl-4">Home</a>
+              <a href="#" class="text-gray-700 hover:text-gray-400 font-medium border-l-4 border-transparent hover:border-gray-400 pl-4">About</a>
+              <a href="#" class="text-gray-700 hover:text-gray-400 font-medium border-l-4 border-transparent hover:border-gray-400 pl-4">Services</a>
+              <a href="#" class="text-gray-700 hover:text-gray-400 font-medium border-l-4 border-transparent hover:border-gray-400 pl-4">Contact</a>
+            </nav>
+          </header>
         
         <div class="flex items-center justify-start min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-left text-black">
@@ -365,6 +379,15 @@
     const mobileMenu = document.getElementById('mobile-menu');
     toggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+      backdrop.classList.toggle('hidden');
     });
-  </script>
+
+    const menu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    closeBtn.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        backdrop.classList.add('hidden');
+    });
+</script>
 </html>
